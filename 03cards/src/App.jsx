@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./components/Card";
+import Header from "./components/Header";
 
 function App() {
   const users = [
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="max-w-screen-xl mx-auto py-20 px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {users.map((currUser, index) => {
