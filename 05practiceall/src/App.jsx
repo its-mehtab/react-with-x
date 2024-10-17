@@ -11,6 +11,7 @@ import { DataContext } from "./context/userContext";
 
 function App() {
   const data = useContext(DataContext);
+  console.log(data);
 
   return (
     <>

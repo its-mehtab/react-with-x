@@ -3,8 +3,6 @@ import Card from "../components/Card";
 import { DataContext } from "../context/userContext";
 
 const Home = function ({ data }) {
-  console.log(data);
-
   return (
     <>
       <div className="w-full py-5 flex justify-center items-center">
