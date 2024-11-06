@@ -6,23 +6,14 @@ function UserDataContext({ children }) {
   const [userData, setUserData] = useState({});
 
   const getUserData = async function () {
-    const response = fetch("https://api.github.com/users/its-mehtab")
-      .then((res) => res.json())
-      .then((data) => setUserData(data))
-      .then();
+    try {
+      const response = await fetch("https://api.github.com/users/its-mehtab");
+      const data = await response.json();
+      setUserData(data);
+    } catch (err) {
+      setError(err.message); // Set error message if fetch fails
+    }
   };
-  // const getUserData = async function () {
-  //   try {
-  //     const response = await fetch("https://api.github.com/users/its-mehtab");
-  //     const data = await response.json();
-  //     setUserData(data);
-  //   } catch (err) {
-  //     setError(err.message); // Set error message if fetch fails
-  //   } finally {
-  //     console.log(data); // Set loading to false after data is fetched
-  //   }
-  // };
-  // console.log(userData);
 
   useEffect(() => {
     getUserData();
