@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div style="display: flex">
+      <div style="margin: 20px; font-size: 40px" class="number">80</div>
+      <div style="margin: 20px; font-size: 40px" class="number">340</div>
+      <div style="margin: 20px; font-size: 40px" class="number">220</div>
+      <div style="margin: 20px; font-size: 40px" class="number">232</div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const numberEle = document.querySelectorAll(".number");
+
+      const number1 = parseFloat(numberEle[0].textContent);
+      const number2 = parseFloat(numberEle[0].textContent);
+      const number3 = parseFloat(numberEle[0].textContent);
+      const number4 = parseFloat(numberEle[0].textContent);
+      let counter = 0;
+      setInterval(function () {
+        if (counter <= number1) {
+          counter++;
+          numberEle[0].textContent = counter;
+          console.log(counter);
+        }
+        if (counter <= number2) {
+          counter++;
+          numberEle[1].textContent = counter;
+        }
+        if (counter <= number3) {
+          counter++;
+          numberEle[2].textContent = counter;
+        }
+        if (counter <= number4) {
+          counter++;
+          numberEle[3].textContent = counter;
+        }
+      }, 10);
+    </script>
+  </body>
+</html>
